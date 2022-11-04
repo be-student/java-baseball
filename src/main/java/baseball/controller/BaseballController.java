@@ -14,7 +14,6 @@ import static baseball.view.SystemOutView.resultMessage;
 
 public class BaseballController {
     private final BaseballService baseballService;
-    private BaseballNumber baseballNumber;
 
     public BaseballController() {
         this.baseballService = new BaseballService();
@@ -42,7 +41,7 @@ public class BaseballController {
     }
 
     private void initGame() {
-        this.baseballNumber = new BaseballNumber();
+        BaseballNumber baseballNumber = new BaseballNumber();
         baseballService.init(baseballNumber);
         initialMessage();
     }
