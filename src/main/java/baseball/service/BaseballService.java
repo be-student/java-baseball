@@ -7,8 +7,6 @@ import baseball.dto.BaseballScore;
 import static baseball.config.BaseballConstant.BASEBALL_LENGTH;
 
 public class BaseballService {
-    private static final int STRIKE_INDEX = 0;
-    private static final int BALL_INDEX = 1;
     private BaseballNumber number;
 
     public BaseballService() {
