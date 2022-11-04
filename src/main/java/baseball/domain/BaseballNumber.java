@@ -12,16 +12,16 @@ public class BaseballNumber {
 
     public BaseballNumber() {
         //100의 자리수를 미리 추가함
-        List<Integer> computer = new ArrayList<>(List.of(Randoms.pickNumberInRange(1, 9)));
+        List<Integer> answer = new ArrayList<>(List.of(Randoms.pickNumberInRange(1, 9)));
 
-        while (computer.size() < BASEBALL_LENGTH) {
+        while (answer.size() < BASEBALL_LENGTH) {
             int randomNumber = Randoms.pickNumberInRange(0, 9);
-            if (!computer.contains(randomNumber)) {
-                computer.add(randomNumber);
+            if (!answer.contains(randomNumber)) {
+                answer.add(randomNumber);
             }
         }
 
-        this.baseballNumber = computer;
+        this.baseballNumber = answer;
     }
 
     public boolean isBall(int index, Integer value) {
