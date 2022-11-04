@@ -11,10 +11,11 @@ public class BaseballNumber {
     private final List<Integer> baseballNumber;
 
     public BaseballNumber() {
-        List<Integer> computer = new ArrayList<>();
+        //100의 자리수를 미리 추가함
+        List<Integer> computer = new ArrayList<>(List.of(Randoms.pickNumberInRange(1, 9)));
 
         while (computer.size() < BASEBALL_LENGTH) {
-            int randomNumber = Randoms.pickNumberInRange(1, 9);
+            int randomNumber = Randoms.pickNumberInRange(0, 9);
             if (!computer.contains(randomNumber)) {
                 computer.add(randomNumber);
             }
