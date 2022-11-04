@@ -37,10 +37,6 @@ public class PlayerChoice {
         return store;
     }
 
-    public List<Integer> getInput() {
-        return input;
-    }
-
     public int getInput(int index) {
         return input.get(index);
     }
