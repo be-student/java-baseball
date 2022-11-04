@@ -2,14 +2,9 @@ package baseball.service;
 
 import baseball.domain.BaseballNumber;
 import baseball.domain.PlayerChoice;
-import baseball.util.PlayerInput;
-
-import java.util.Arrays;
-import java.util.List;
+import baseball.dto.BaseballScore;
 
 import static baseball.config.BaseballConstant.BASEBALL_LENGTH;
-import static baseball.view.SystemOutView.endMessage;
-import static baseball.view.SystemOutView.resultMessage;
 
 public class BaseballService {
     private static final int STRIKE_INDEX = 0;
@@ -23,31 +18,24 @@ public class BaseballService {
         this.number = number;
     }
 
-    public void run() {
-        while (true) {
-            int input = PlayerInput.playerTry();
-            PlayerChoice choice = new PlayerChoice(input);
-            List<Integer> playerScore = getPlayerScore(choice);
-            resultMessage(playerScore.get(BALL_INDEX), playerScore.get(STRIKE_INDEX));
-            if (playerScore.get(STRIKE_INDEX) == BASEBALL_LENGTH) {
-                endMessage();
-                return;
-            }
-        }
+    public BaseballScore run(int input) {
+        PlayerChoice choice = new PlayerChoice(input);
+        return getPlayerScore(choice);
     }
 
-    private List<Integer> getPlayerScore(PlayerChoice choice) {
-        List<Integer> answer = Arrays.asList(0, 0);
+    private BaseballScore getPlayerScore(PlayerChoice choice) {
+        int strikeCount = 0;
+        int ballCount = 0;
         for (int i = 0; i < BASEBALL_LENGTH; i++) {
             if (number.isStrike(i, choice.getInput(i))) {
-                answer.set(STRIKE_INDEX, answer.get(STRIKE_INDEX) + 1);
+                strikeCount++;
                 continue;
             }
             if (number.isBall(i, choice.getInput(i))) {
-                answer.set(BALL_INDEX, answer.get(BALL_INDEX) + 1);
+                ballCount++;
             }
         }
-        return answer;
+        return new BaseballScore(strikeCount, ballCount);
     }
 
 }

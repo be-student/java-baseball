@@ -1,5 +1,7 @@
 package baseball.view;
 
+import baseball.dto.BaseballScore;
+
 public class SystemOutView {
     private SystemOutView() {
     }
@@ -12,31 +14,36 @@ public class SystemOutView {
         System.out.print("숫자를 입력해주세요 : ");
     }
 
-    public static void resultMessage(int ballCount, int strikeCount) {
-        if (ballCount == 0 && strikeCount == 0) {
+    public static void resultMessage(BaseballScore score) {
+        if (isWrong(score)) {
             System.out.println("낫싱");
             return;
         }
-        ballMessage(ballCount);
-        strikeMessage(strikeCount);
+        ballMessage(score);
+        strikeMessage(score);
         System.out.println();
-        if (strikeCount == 3) {
+
+        if (score.getStrikeCount() == 3) {
             System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
         }
     }
 
-    private static void ballMessage(int ballCount) {
-        if (ballCount == 0) {
-            return;
-        }
-        System.out.print(ballCount + "볼 ");
+    private static boolean isWrong(BaseballScore score) {
+        return score.getBallCount() == 0 && score.getStrikeCount() == 0;
     }
 
-    private static void strikeMessage(int strikeCount) {
-        if (strikeCount == 0) {
+    private static void ballMessage(BaseballScore score) {
+        if (score.getBallCount() == 0) {
             return;
         }
-        System.out.print(strikeCount + "스트라이크");
+        System.out.print(score.getBallCount() + "볼 ");
+    }
+
+    private static void strikeMessage(BaseballScore score) {
+        if (score.getStrikeCount() == 0) {
+            return;
+        }
+        System.out.print(score.getStrikeCount() + "스트라이크");
     }
 
     public static void endMessage() {
