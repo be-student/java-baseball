@@ -9,7 +9,7 @@ public class SystemOutView {
     }
 
     public static void inputMessage() {
-        System.out.println("숫자를 입력해주세요 : ");
+        System.out.print("숫자를 입력해주세요 : ");
     }
 
     public static void resultMessage(int ballCount, int strikeCount) {
