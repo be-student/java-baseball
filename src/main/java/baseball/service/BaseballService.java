@@ -43,7 +43,7 @@ public class BaseballService {
                 answer.set(STRIKE_INDEX, answer.get(STRIKE_INDEX) + 1);
                 continue;
             }
-            if (number.contains(choice.getInput(i))) {
+            if (number.isBall(i, choice.getInput(i))) {
                 answer.set(BALL_INDEX, answer.get(BALL_INDEX) + 1);
             }
         }

@@ -24,7 +24,10 @@ public class BaseballNumber {
         this.baseballNumber = computer;
     }
 
-    public boolean contains(Integer value) {
+    public boolean isBall(int index, Integer value) {
+        if (baseballNumber.get(index).equals(value)) {
+            return false;
+        }
         return baseballNumber.contains(value);
     }
 
