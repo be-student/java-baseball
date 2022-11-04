@@ -13,6 +13,7 @@ import static baseball.view.SystemOutView.initialMessage;
 import static baseball.view.SystemOutView.resultMessage;
 
 public class BaseballController {
+    private static final int NOT_SELECTED = 0;
     private final BaseballService baseballService;
 
     public BaseballController() {
@@ -25,7 +26,7 @@ public class BaseballController {
         BaseballScore score = baseballService.run(input);
         resultMessage(score);
 
-        int playerChoice = 0;
+        int playerChoice = NOT_SELECTED;
 
         if (score.getStrikeCount() == BASEBALL_LENGTH) {
             endMessage();
