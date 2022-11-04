@@ -3,18 +3,19 @@ package baseball.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import static baseball.config.BaseballConstant.INPUT_END_EXCLUSIVE;
+import static baseball.config.BaseballConstant.INPUT_START_INCLUSIVE;
+
 public class PlayerChoice {
-    private static final int START_INCLUSIVE = 100;
-    private static final int END_EXCLUSIVE = 1000;
-    private static final String rangeMessage = "입력에 " + START_INCLUSIVE + "와 " + END_EXCLUSIVE + "바깥의 값이 들어왔습니다";
+    private static final String rangeMessage = "입력에 " + INPUT_START_INCLUSIVE + "와 " + INPUT_END_EXCLUSIVE + "바깥의 값이 들어왔습니다";
     private static final String duplicateMessage = "입력에 중복된 숫자가 들어왔습니다";
     private final List<Integer> input;
 
     public PlayerChoice(int input) {
-        if (input < START_INCLUSIVE) {
+        if (input < INPUT_START_INCLUSIVE) {
             throw new IllegalArgumentException(rangeMessage);
         }
-        if (input >= END_EXCLUSIVE) {
+        if (input >= INPUT_END_EXCLUSIVE) {
             throw new IllegalArgumentException(rangeMessage);
         }
 

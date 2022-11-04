@@ -24,7 +24,7 @@ public class BaseballNumber {
         this.baseballNumber = computer;
     }
 
-    public boolean isBall(Integer value) {
+    public boolean contains(Integer value) {
         return baseballNumber.contains(value);
     }
 
