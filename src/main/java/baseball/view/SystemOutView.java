@@ -13,9 +13,16 @@ public class SystemOutView {
     }
 
     public static void resultMessage(int ballCount, int strikeCount) {
+        if (ballCount == 0 && strikeCount == 0) {
+            System.out.println("낫싱");
+            return;
+        }
         ballMessage(ballCount);
         strikeMessage(strikeCount);
-        System.out.println("");
+        System.out.println();
+        if (strikeCount == 3) {
+            System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+        }
     }
 
     private static void ballMessage(int ballCount) {

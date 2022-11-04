@@ -5,6 +5,7 @@ import camp.nextstep.edu.missionutils.Console;
 import static baseball.config.BaseballConstant.FINISH;
 import static baseball.config.BaseballConstant.RETRY;
 import static baseball.view.SystemOutView.inputMessage;
+import static baseball.view.SystemOutView.retryMessage;
 
 public class PlayerInput {
     private PlayerInput() {
@@ -12,6 +13,7 @@ public class PlayerInput {
 
     public static int retry() {
         try {
+            retryMessage();
             String lineChoice = Console.readLine();
             int playerChoice = Integer.parseInt(lineChoice);
             if (playerChoice == RETRY || playerChoice == FINISH) {

@@ -6,7 +6,6 @@ import baseball.util.PlayerInput;
 
 import static baseball.config.BaseballConstant.FINISH;
 import static baseball.view.SystemOutView.initialMessage;
-import static baseball.view.SystemOutView.retryMessage;
 
 public class BaseballController {
     private final BaseballService baseballService;
@@ -20,7 +19,6 @@ public class BaseballController {
         while (true) {
             initGame();
             baseballService.run();
-            retryMessage();
             int playerChoice = PlayerInput.retry();
             if (playerChoice == FINISH) {
                 return;

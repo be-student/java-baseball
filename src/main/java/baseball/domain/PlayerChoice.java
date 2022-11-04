@@ -37,7 +37,7 @@ public class PlayerChoice {
         return store;
     }
 
-    public int getInput(int index) {
+    public Integer getInput(int index) {
         return input.get(index);
     }
 }
