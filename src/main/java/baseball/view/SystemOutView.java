@@ -19,8 +19,8 @@ public class SystemOutView {
             System.out.println("낫싱");
             return;
         }
-        ballMessage(score);
-        strikeMessage(score);
+        ballMessage(score.getBallCount());
+        strikeMessage(score.getStrikeCount());
         System.out.println();
 
         if (score.getStrikeCount() == 3) {
@@ -32,18 +32,18 @@ public class SystemOutView {
         return score.getBallCount() == 0 && score.getStrikeCount() == 0;
     }
 
-    private static void ballMessage(BaseballScore score) {
-        if (score.getBallCount() == 0) {
+    private static void ballMessage(int ballCount) {
+        if (ballCount == 0) {
             return;
         }
-        System.out.print(score.getBallCount() + "볼 ");
+        System.out.print(ballCount + "볼 ");
     }
 
-    private static void strikeMessage(BaseballScore score) {
-        if (score.getStrikeCount() == 0) {
+    private static void strikeMessage(int strikeCount) {
+        if (strikeCount == 0) {
             return;
         }
-        System.out.print(score.getStrikeCount() + "스트라이크");
+        System.out.print(strikeCount + "스트라이크");
     }
 
     public static void endMessage() {
