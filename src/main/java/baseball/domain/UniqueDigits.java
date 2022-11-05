@@ -12,7 +12,7 @@ public class UniqueDigits {
     private static final String OVER_RANGE_MESSAGE = "입력이 999를 초과했습니다";
     private static final String LESS_RANGE_MESSAGE = "입력이 100보다 작았습니다";
     private static final String DUPLICATE_INPUT_MESSAGE = "입력에 중복값이 있습니다";
-    private List<Integer> uniqueDigits;
+    private final List<Integer> uniqueDigits;
 
     private UniqueDigits(int uniqueNumber) {
         isDigitInRange(uniqueNumber);
