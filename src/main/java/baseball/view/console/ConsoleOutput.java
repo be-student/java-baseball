@@ -6,6 +6,9 @@ import baseball.view.OutputView;
  * 숫자 야구에서 콘솔을 통해서 입력을 받는 구현체
  */
 public class ConsoleOutput implements OutputView {
+    private ConsoleOutput() {
+    }
+
     /**
      * @return OutputView ConsoleOutput 객체를 반환한다
      */

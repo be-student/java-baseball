@@ -7,6 +7,9 @@ import camp.nextstep.edu.missionutils.Console;
  * 숫자 야구에서 콘솔을 통해서 입력을 받는 구현체
  */
 public class ConsoleInput implements InputView {
+    private ConsoleInput() {
+    }
+
     /**
      * @return InputView ConsoleInput 객체를 반환한다
      */
