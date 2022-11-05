@@ -9,6 +9,6 @@ public class RandomAnswerTest {
     @DisplayName("Random 값을 생성할 수 있음")
     @Test
     void 잘_작동함() {
-        assertDoesNotThrow(() -> RandomAnswer.createRandom());
+        assertDoesNotThrow(RandomAnswer::createRandom);
     }
 }

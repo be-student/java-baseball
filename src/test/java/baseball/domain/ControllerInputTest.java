@@ -12,12 +12,7 @@ public class ControllerInputTest {
     @DisplayName("인풋을 잘 읽어온다")
     @Test
     void 인풋_잘_읽어옴() {
-        InputView inputView = new InputView() {
-            @Override
-            public String readLine() {
-                return "1";
-            }
-        };
+        InputView inputView = () -> "1";
         assertThat(ControllerInput.from(inputView)
                 .getInput())
                 .isEqualTo(
@@ -27,12 +22,7 @@ public class ControllerInputTest {
     @DisplayName("input에 1,2외의 문자열이 들어온다")
     @Test
     void 인풋_에러() {
-        InputView inputView = new InputView() {
-            @Override
-            public String readLine() {
-                return "hello";
-            }
-        };
+        InputView inputView = () -> "hello";
         assertThrows(IllegalArgumentException.class,
                 () -> ControllerInput.from(inputView)
                         .getInput());
