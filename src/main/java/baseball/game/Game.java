@@ -13,6 +13,9 @@ import static baseball.config.GameMessages.THREE_STRIKE;
 import static baseball.config.GameMessages.TWO_BALL;
 import static baseball.config.GameMessages.TWO_STRIKE;
 
+/**
+ * 야구 게임 1경기를 진행하는 역할을 가지고 있습니다
+ */
 public class Game {
     private final InputView inputView;
     private final OutputView outputView;
@@ -23,6 +26,13 @@ public class Game {
         this.outputView = outputView;
     }
 
+    /**
+     * 생성시에 input, output이 모두 결정되어 있어야 합니다
+     *
+     * @param inputView  입력의 방식이 담긴 구현체를 인자로 받습니다
+     * @param outputView 출력 방식이 담긴 구현체를 인자로 받습니다
+     * @return 게임 객체를 반환합니다
+     */
     public static Game of(InputView inputView, OutputView outputView) {
         return new Game(inputView, outputView);
     }

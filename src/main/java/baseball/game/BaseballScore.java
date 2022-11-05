@@ -2,6 +2,9 @@ package baseball.game;
 
 import static baseball.config.GameConstants.BASEBALL_LENGTH;
 
+/**
+ * 점수 계산을 담당하는 클래스 입니다
+ */
 public class BaseballScore {
     private final Ball ball;
     private final Strike strike;
@@ -18,6 +21,13 @@ public class BaseballScore {
         this.strike = Strike.ZERO;
     }
 
+    /**
+     * 볼, 스트라이크 점수를 계산하는 객체를 반환합니다
+     *
+     * @param player       사용자가 입력한 중복 없는 숫자를 의미합니다
+     * @param randomAnswer 컴퓨터가 랜덤하게 생성한 3자리 숫자를 의미합니다
+     * @return 점수가 담긴 객체를 반환합니다
+     */
     public static BaseballScore of(UniqueDigits player, RandomAnswer randomAnswer) {
         return new BaseballScore(player, randomAnswer);
     }

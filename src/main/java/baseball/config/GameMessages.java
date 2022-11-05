@@ -1,5 +1,8 @@
 package baseball.config;
 
+/**
+ * 게임에서 사용되는 모든 메시지들을 다 모아놓은 클래스
+ */
 public class GameMessages {
     public static final String INPUT_MESSAGE = "숫자를 입력해주세요 : ";
     public static final String ONE_BALL = "1볼 ";

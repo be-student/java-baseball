@@ -5,6 +5,9 @@ import baseball.view.InputView;
 
 import static baseball.config.ControllerMessages.CONTROLLER_ERROR_MESSAGE;
 
+/**
+ * 컨트롤러에서 필요한 input을 얻는 클래스
+ */
 public class ControllerInput {
     private final InputView inputView;
 
@@ -16,6 +19,11 @@ public class ControllerInput {
         return new ControllerInput(inputView);
     }
 
+    /**
+     * 인풋을 얻도록 만드는 메서드
+     *
+     * @return 1, 2의 경우만을 허용하고, 이를 Enum으로 감싸서 반환함
+     */
     public ControllerConstants getInput() {
         try {
             String inputLine = inputView.readLine();
