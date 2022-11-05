@@ -34,4 +34,8 @@ public class RandomAnswer {
             answer.add(randomNumber);
         }
     }
+
+    public Integer digitWithIndex(int index) {
+        return answer.get(index);
+    }
 }

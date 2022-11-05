@@ -3,30 +3,34 @@ package baseball.domain;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Field;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BaseballScoreTest {
+    private final RandomAnswer randomAnswer = RandomAnswer.createRandom();
+
     @DisplayName("Strike와 Ball이 잘 계산됨")
     @Test
-    void 잘_작동() {
-        assertThat(BaseballScore.of(0, 0).isZeroBall()).isEqualTo(true);
-        assertThat(BaseballScore.of(0, 0).isZeroStrike()).isEqualTo(true);
+    void 잘_작동() throws NoSuchFieldException, IllegalAccessException {
+        Field field = RandomAnswer.class.getDeclaredField("answer");
+        field.setAccessible(true);
+        field.set(randomAnswer, List.of(1, 2, 3));
 
-        assertThat(BaseballScore.of(1, 1).isOneBall()).isEqualTo(true);
-        assertThat(BaseballScore.of(1, 1).isOneStrike()).isEqualTo(true);
+        UniqueDigits player1 = UniqueDigits.from(123);
+        BaseballScore temp1 = BaseballScore.of(player1, randomAnswer);
+        assertThat(temp1.isThreeStrike()).isEqualTo(true);
+        assertThat(temp1.isZeroBall()).isEqualTo(true);
 
-        assertThat(BaseballScore.of(2, 2).isTwoBall()).isEqualTo(true);
-        assertThat(BaseballScore.of(2, 2).isTwoStrike()).isEqualTo(true);
+        UniqueDigits player2 = UniqueDigits.from(923);
+        BaseballScore temp2 = BaseballScore.of(player2, randomAnswer);
+        assertThat(temp2.isTwoStrike()).isEqualTo(true);
+        assertThat(temp2.isZeroBall()).isEqualTo(true);
 
-        assertThat(BaseballScore.of(3, 3).isThreeBall()).isEqualTo(true);
-        assertThat(BaseballScore.of(3, 3).isThreeStrike()).isEqualTo(true);
-    }
-
-    @DisplayName("Strike와 Ball이 범위 바깥 에러")
-    @Test
-    void 범위_바깥_에러() {
-        assertThrows(IllegalArgumentException.class, () -> BaseballScore.of(-1, 0));
-        assertThrows(IllegalArgumentException.class, () -> BaseballScore.of(0, -1));
+        UniqueDigits player3 = UniqueDigits.from(321);
+        BaseballScore temp3 = BaseballScore.of(player3, randomAnswer);
+        assertThat(temp3.isOneStrike()).isEqualTo(true);
+        assertThat(temp3.isTwoBall()).isEqualTo(true);
     }
 }

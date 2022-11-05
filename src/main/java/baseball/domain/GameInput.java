@@ -18,7 +18,7 @@ public class GameInput {
         try {
             String inputLine = inputView.readLine();
             int digits = Integer.parseInt(inputLine);
-            return UniqueDigits.of(digits);
+            return UniqueDigits.from(digits);
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
             throw new IllegalArgumentException(INPUT_ERROR_MESSAGE, e);

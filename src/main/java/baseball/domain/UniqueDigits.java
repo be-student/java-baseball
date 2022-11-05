@@ -19,7 +19,7 @@ public class UniqueDigits {
         this.uniqueDigits = splitDigits(uniqueNumber);
     }
 
-    public static UniqueDigits of(int digits) {
+    public static UniqueDigits from(int digits) {
         return new UniqueDigits(digits);
     }
 
@@ -44,5 +44,13 @@ public class UniqueDigits {
             throw new IllegalArgumentException(DUPLICATE_INPUT_MESSAGE);
         }
         return digits;
+    }
+
+    public Integer digitWithIndex(int index) {
+        return uniqueDigits.get(index);
+    }
+
+    public boolean contains(int value) {
+        return uniqueDigits.contains(value);
     }
 }

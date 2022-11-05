@@ -4,13 +4,35 @@ public class BaseballScore {
     private final Ball ball;
     private final Strike strike;
 
-    private BaseballScore(int ballCount, int strikeCount) {
+    private BaseballScore(UniqueDigits player, RandomAnswer computer) {
+        int ballCount = calculateBallCount(player, computer);
+        int strikeCount = calculateStrikeCount(player, computer);
         this.ball = Ball.from(ballCount);
         this.strike = Strike.from(strikeCount);
     }
 
-    public static BaseballScore of(int ballCount, int strikeCount) {
-        return new BaseballScore(ballCount, strikeCount);
+    public static BaseballScore of(UniqueDigits player, RandomAnswer randomAnswer) {
+        return new BaseballScore(player, randomAnswer);
+    }
+
+    private int calculateBallCount(UniqueDigits player, RandomAnswer computer) {
+        int ballCount = 0;
+        for (int i = 0; i < 3; i++) {
+            if (!player.digitWithIndex(i).equals(computer.digitWithIndex(i)) && player.contains(computer.digitWithIndex(i))) {
+                ballCount++;
+            }
+        }
+        return ballCount;
+    }
+
+    private int calculateStrikeCount(UniqueDigits player, RandomAnswer computer) {
+        int strikeCount = 0;
+        for (int i = 0; i < 3; i++) {
+            if (player.digitWithIndex(i).equals(computer.digitWithIndex(i))) {
+                strikeCount++;
+            }
+        }
+        return strikeCount;
     }
 
     public boolean isZeroBall() {

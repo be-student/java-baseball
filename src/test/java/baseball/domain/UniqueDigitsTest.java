@@ -11,7 +11,7 @@ public class UniqueDigitsTest {
     @Test
     void 잘_작동함() {
         assertDoesNotThrow(() -> {
-            UniqueDigits.of(123);
+            UniqueDigits.from(123);
         });
     }
 
@@ -19,7 +19,7 @@ public class UniqueDigitsTest {
     @Test
     void 최대_초과() {
         assertThrows(IllegalArgumentException.class, () -> {
-            UniqueDigits.of(1000);
+            UniqueDigits.from(1000);
         });
     }
 
@@ -27,7 +27,7 @@ public class UniqueDigitsTest {
     @Test
     void 최소_범위_초과() {
         assertThrows(IllegalArgumentException.class, () -> {
-            UniqueDigits.of(98);
+            UniqueDigits.from(98);
         });
     }
 
@@ -35,7 +35,7 @@ public class UniqueDigitsTest {
     @Test
     void 중복_숫자() {
         assertThrows(IllegalArgumentException.class, () -> {
-            UniqueDigits.of(112);
+            UniqueDigits.from(112);
         });
     }
 }
