@@ -18,21 +18,32 @@ public class BaseballScore {
     private int calculateBallCount(UniqueDigits player, RandomAnswer computer) {
         int ballCount = 0;
         for (int i = 0; i < 3; i++) {
-            if (!player.digitWithIndex(i).equals(computer.digitWithIndex(i)) && player.contains(computer.digitWithIndex(i))) {
+            if (isBall(player, computer, i)) {
                 ballCount++;
             }
         }
         return ballCount;
     }
 
+    private boolean isBall(UniqueDigits player, RandomAnswer computer, int index) {
+        if (player.digitWithIndex(index).equals(computer.digitWithIndex(index))) {
+            return false;
+        }
+        return player.contains(computer.digitWithIndex(index));
+    }
+
     private int calculateStrikeCount(UniqueDigits player, RandomAnswer computer) {
         int strikeCount = 0;
         for (int i = 0; i < 3; i++) {
-            if (player.digitWithIndex(i).equals(computer.digitWithIndex(i))) {
+            if (isStrike(player, computer, i)) {
                 strikeCount++;
             }
         }
         return strikeCount;
+    }
+
+    private boolean isStrike(UniqueDigits player, RandomAnswer computer, int index) {
+        return player.digitWithIndex(index).equals(computer.digitWithIndex(index));
     }
 
     public boolean isZeroBall() {
