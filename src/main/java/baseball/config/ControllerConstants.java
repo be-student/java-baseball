@@ -16,8 +16,4 @@ public enum ControllerConstants {
                 .findFirst()
                 .orElseThrow(IllegalArgumentException::new);
     }
-
-    public int getValue() {
-        return value;
-    }
 }

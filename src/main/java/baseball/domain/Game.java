@@ -22,8 +22,6 @@ public class Game {
         while (true) {
             printInputMessage();
             UniqueDigits playerInput = getPlayerInput();
-            outputView.print("" + randomAnswer.digitWithIndex(0) + randomAnswer.digitWithIndex(1) + randomAnswer.digitWithIndex(2) + "\n");
-            ;
             BaseballScore score = BaseballScore.of(playerInput, randomAnswer);
             printResultMessage(score);
             if (score.isThreeStrike()) {
