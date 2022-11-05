@@ -5,6 +5,7 @@ import org.assertj.core.util.Sets;
 import java.util.ArrayList;
 import java.util.List;
 
+import static baseball.config.GameConstants.BASEBALL_LENGTH;
 import static baseball.config.GameConstants.MAX_INPUT_INCLUSIVE;
 import static baseball.config.GameConstants.MIN_INPUT_INCLUSIVE;
 
@@ -40,7 +41,7 @@ public class UniqueDigits {
             uniqueNumber /= 10;
         }
 
-        if (Sets.newHashSet(digits).size() != 3) {
+        if (Sets.newHashSet(digits).size() != BASEBALL_LENGTH) {
             throw new IllegalArgumentException(DUPLICATE_INPUT_MESSAGE);
         }
         return digits;

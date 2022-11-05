@@ -1,5 +1,7 @@
 package baseball.game;
 
+import static baseball.config.GameConstants.BASEBALL_LENGTH;
+
 public class BaseballScore {
     private final Ball ball;
     private final Strike strike;
@@ -26,7 +28,7 @@ public class BaseballScore {
 
     private int calculateBallCount(UniqueDigits player, RandomAnswer computer) {
         int ballCount = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < BASEBALL_LENGTH; i++) {
             if (isBall(player, computer, i)) {
                 ballCount++;
             }
@@ -43,7 +45,7 @@ public class BaseballScore {
 
     private int calculateStrikeCount(UniqueDigits player, RandomAnswer computer) {
         int strikeCount = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < BASEBALL_LENGTH; i++) {
             if (isStrike(player, computer, i)) {
                 strikeCount++;
             }
