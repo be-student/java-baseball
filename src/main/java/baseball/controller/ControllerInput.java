@@ -3,8 +3,9 @@ package baseball.controller;
 import baseball.config.ControllerConstants;
 import baseball.view.InputView;
 
+import static baseball.config.ControllerMessages.CONTROLLER_ERROR_MESSAGE;
+
 public class ControllerInput {
-    private static final String CONTROLLER_ERROR_MESSAGE = "1,2의 입력만 들어와야 합니다";
     private final InputView inputView;
 
     private ControllerInput(InputView inputView) {

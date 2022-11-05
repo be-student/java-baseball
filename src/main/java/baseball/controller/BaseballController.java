@@ -5,6 +5,9 @@ import baseball.game.Game;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 
+import static baseball.config.ControllerMessages.INIT_MESSAGE;
+import static baseball.config.ControllerMessages.RETRY_MESSAGE;
+
 public class BaseballController {
     private final InputView inputView;
     private final OutputView outputView;
@@ -33,10 +36,10 @@ public class BaseballController {
     }
 
     private void printInitMessage() {
-        outputView.print("숫자 야구 게임을 시작합니다.\n");
+        outputView.print(INIT_MESSAGE);
     }
 
     private void printRetryMessage() {
-        outputView.print("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.\n");
+        outputView.print(RETRY_MESSAGE);
     }
 }

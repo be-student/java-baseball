@@ -2,8 +2,9 @@ package baseball.game;
 
 import baseball.view.InputView;
 
+import static baseball.config.GameMessages.INPUT_ERROR_MESSAGE;
+
 public class GameInput {
-    private static final String INPUT_ERROR_MESSAGE = "입력값은 100~999사이 중복 없는 숫자여야 합니다.";
     private final InputView inputView;
 
     private GameInput(InputView inputView) {

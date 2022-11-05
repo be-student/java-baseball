@@ -3,6 +3,16 @@ package baseball.game;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 
+import static baseball.config.GameMessages.ALL_CORRECT;
+import static baseball.config.GameMessages.INPUT_MESSAGE;
+import static baseball.config.GameMessages.NOTHING;
+import static baseball.config.GameMessages.ONE_BALL;
+import static baseball.config.GameMessages.ONE_STRIKE;
+import static baseball.config.GameMessages.THREE_BALL;
+import static baseball.config.GameMessages.THREE_STRIKE;
+import static baseball.config.GameMessages.TWO_BALL;
+import static baseball.config.GameMessages.TWO_STRIKE;
+
 public class Game {
     private final InputView inputView;
     private final OutputView outputView;
@@ -36,7 +46,7 @@ public class Game {
     }
 
     private void printInputMessage() {
-        outputView.print("숫자를 입력해주세요 : ");
+        outputView.print(INPUT_MESSAGE);
     }
 
     private UniqueDigits getPlayerInput() {
@@ -52,39 +62,39 @@ public class Game {
 
     private void printBallMessage(BaseballScore score) {
         if (score.isOneBall()) {
-            outputView.print("1볼 ");
+            outputView.print(ONE_BALL);
             return;
         }
         if (score.isTwoBall()) {
-            outputView.print("2볼 ");
+            outputView.print(TWO_BALL);
             return;
         }
         if (score.isThreeBall()) {
-            outputView.print("3볼 ");
+            outputView.print(THREE_BALL);
         }
     }
 
     private void printStrikeMessage(BaseballScore score) {
         if (score.isOneStrike()) {
-            outputView.print("1스트라이크");
+            outputView.print(ONE_STRIKE);
             return;
         }
         if (score.isTwoStrike()) {
-            outputView.print("2스트라이크");
+            outputView.print(TWO_STRIKE);
             return;
         }
         if (score.isThreeStrike()) {
-            outputView.print("3스트라이크");
+            outputView.print(THREE_STRIKE);
         }
     }
 
     private void printNothingMessage(BaseballScore score) {
         if (score.isZeroBall() && score.isZeroStrike()) {
-            outputView.print("낫싱");
+            outputView.print(NOTHING);
         }
     }
 
     private void printEndMessage() {
-        outputView.print("3개의 숫자를 모두 맞히셨습니다! 게임 종료\n");
+        outputView.print(ALL_CORRECT);
     }
 }

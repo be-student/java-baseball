@@ -8,11 +8,11 @@ import java.util.List;
 import static baseball.config.GameConstants.BASEBALL_LENGTH;
 import static baseball.config.GameConstants.MAX_INPUT_INCLUSIVE;
 import static baseball.config.GameConstants.MIN_INPUT_INCLUSIVE;
+import static baseball.config.GameMessages.DUPLICATE_INPUT_MESSAGE;
+import static baseball.config.GameMessages.LESS_RANGE_MESSAGE;
+import static baseball.config.GameMessages.OVER_RANGE_MESSAGE;
 
 public class UniqueDigits {
-    private static final String OVER_RANGE_MESSAGE = "입력이 999를 초과했습니다";
-    private static final String LESS_RANGE_MESSAGE = "입력이 100보다 작았습니다";
-    private static final String DUPLICATE_INPUT_MESSAGE = "입력에 중복값이 있습니다";
     private final List<Integer> uniqueDigits;
 
     private UniqueDigits(int uniqueNumber) {
