@@ -1,6 +1,6 @@
 package baseball.view;
 
-import baseball.dto.BaseballScore;
+import baseball.domain.BaseballScore;
 
 public class SystemOutView {
     private SystemOutView() {

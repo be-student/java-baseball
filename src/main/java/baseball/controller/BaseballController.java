@@ -1,7 +1,7 @@
 package baseball.controller;
 
 import baseball.domain.BaseballNumber;
-import baseball.dto.BaseballScore;
+import baseball.domain.BaseballScore;
 import baseball.service.BaseballService;
 import baseball.util.PlayerInput;
 
@@ -17,7 +17,7 @@ public class BaseballController {
     private final BaseballService baseballService;
 
     public BaseballController() {
-        this.baseballService = new BaseballService();
+        baseballService = new BaseballService();
         initGame();
     }
 
@@ -29,7 +29,9 @@ public class BaseballController {
         int playerChoice = NOT_SELECTED;
 
         if (score.getStrikeCount() == BASEBALL_LENGTH) {
+            //Todo 게임이 종료 되는 것, 종료 검증, 종료 후 해야할 일들 분리하기
             endMessage();
+            //Todo Enum
             playerChoice = PlayerInput.retry();
         }
         if (playerChoice == FINISH) {
@@ -41,6 +43,7 @@ public class BaseballController {
         run();
     }
 
+    //Todo 한 번만 호출한다
     private void initGame() {
         BaseballNumber baseballNumber = new BaseballNumber();
         baseballService.init(baseballNumber);

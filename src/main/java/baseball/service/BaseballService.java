@@ -1,11 +1,12 @@
 package baseball.service;
 
 import baseball.domain.BaseballNumber;
+import baseball.domain.BaseballScore;
 import baseball.domain.PlayerChoice;
-import baseball.dto.BaseballScore;
 
 import static baseball.config.BaseballConstant.BASEBALL_LENGTH;
 
+//Todo 네이밍 변경
 public class BaseballService {
     private BaseballNumber number;
 
