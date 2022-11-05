@@ -11,8 +11,17 @@ public class BaseballScore {
         this.strike = Strike.from(strikeCount);
     }
 
+    private BaseballScore() {
+        this.ball = Ball.ZERO;
+        this.strike = Strike.ZERO;
+    }
+
     public static BaseballScore of(UniqueDigits player, RandomAnswer randomAnswer) {
         return new BaseballScore(player, randomAnswer);
+    }
+
+    public static BaseballScore ZERO() {
+        return new BaseballScore();
     }
 
     private int calculateBallCount(UniqueDigits player, RandomAnswer computer) {

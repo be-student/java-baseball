@@ -19,16 +19,16 @@ public class Game {
 
     public void run() {
         initGame();
-        while (true) {
+        BaseballScore score = BaseballScore.ZERO();
+
+        while (!score.isThreeStrike()) {
             printInputMessage();
             UniqueDigits playerInput = getPlayerInput();
-            BaseballScore score = BaseballScore.of(playerInput, randomAnswer);
+            score = BaseballScore.of(playerInput, randomAnswer);
             printResultMessage(score);
-            if (score.isThreeStrike()) {
-                printEndMessage();
-                return;
-            }
         }
+
+        printEndMessage();
     }
 
     public void initGame() {

@@ -19,12 +19,11 @@ public class BaseballController {
 
     public void run() {
         initController();
-        while (true) {
+        ControllerConstants choice = ControllerConstants.RETRY;
+        while (choice == ControllerConstants.RETRY) {
             Game.of(inputView, outputView).run();
             printRetryMessage();
-            if (ControllerInput.from(inputView).getInput() == ControllerConstants.FINISH) {
-                return;
-            }
+            choice = ControllerInput.from(inputView).getInput();
         }
     }
 
