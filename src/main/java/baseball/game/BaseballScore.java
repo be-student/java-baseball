@@ -1,4 +1,4 @@
-package baseball.domain;
+package baseball.game;
 
 public class BaseballScore {
     private final Ball ball;

@@ -1,6 +1,6 @@
 package baseball;
 
-import baseball.domain.BaseballController;
+import baseball.controller.BaseballController;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 import baseball.view.console.ConsoleInput;

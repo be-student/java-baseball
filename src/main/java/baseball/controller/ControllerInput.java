@@ -1,4 +1,4 @@
-package baseball.domain;
+package baseball.controller;
 
 import baseball.config.ControllerConstants;
 import baseball.view.InputView;

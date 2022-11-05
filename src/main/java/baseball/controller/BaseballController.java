@@ -1,6 +1,7 @@
-package baseball.domain;
+package baseball.controller;
 
 import baseball.config.ControllerConstants;
+import baseball.game.Game;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 
