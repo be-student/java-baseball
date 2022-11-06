@@ -18,14 +18,14 @@ public class RandomAnswerTest {
     @DisplayName("RandomInRange를 주입한다")
     @Test
     void randomInRange() throws NoSuchMethodException {
-        Constructor constructor = RandomAnswer.class.getConstructor(RandomInRangeImpl.class);
+        Constructor<RandomAnswer> constructor = RandomAnswer.class.getConstructor(RandomInRangeImpl.class);
         constructor.setAccessible(true);
         RandomInRangeImpl randomInRange = new RandomInRangeImpl() {
             private int temp = 1;
 
             @Override
-            public int pickInRange(int startInclusive, int endInclusive) {
-                return temp++;
+            public Digit pickInRange(int startInclusive, int endInclusive) {
+                return Digit.from(temp++);
             }
         };
 

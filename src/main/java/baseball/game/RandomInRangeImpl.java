@@ -6,5 +6,5 @@ package baseball.game;
  * 이를 통해서 랜덤 값을 테스트 할 수 있습니다
  */
 public interface RandomInRangeImpl {
-    int pickInRange(int startInclusive, int endInclusive);
+    Digit pickInRange(int startInclusive, int endInclusive);
 }
