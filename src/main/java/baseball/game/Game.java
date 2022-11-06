@@ -42,8 +42,8 @@ public class Game {
         BaseballScore score = BaseballScore.ZERO();
 
         while (!score.isThreeStrike()) {
-            printInputMessage();
             UniqueDigits playerInput = getPlayerInput();
+
             score = BaseballScore.of(playerInput, randomAnswer);
             printResultMessage(score);
         }
@@ -60,6 +60,7 @@ public class Game {
     }
 
     private UniqueDigits getPlayerInput() {
+        printInputMessage();
         return GameInput.from(inputView).getInputNumber();
     }
 
