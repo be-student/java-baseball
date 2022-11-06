@@ -10,14 +10,15 @@ import static baseball.config.GameConstants.BASEBALL_LENGTH;
  */
 public class RandomAnswer {
     private final List<Integer> answer;
-    private final RandomInRange random = new RandomInRange();
+    private final RandomInRangeImpl random;
 
-    public RandomAnswer() {
+    public RandomAnswer(RandomInRangeImpl random) {
+        this.random = random;
         this.answer = generateAnswer();
     }
 
     public static RandomAnswer createRandom() {
-        return new RandomAnswer();
+        return new RandomAnswer(new RandomInRange());
     }
 
     /**
