@@ -7,7 +7,10 @@ import java.util.Arrays;
  * 0,1,2,3까지 스트라이크를 나타낼 수 있음
  */
 public enum Strike {
-    ZERO(0), ONE(1), TWO(2), THREE(3);
+    ZERO(0),
+    ONE(1),
+    TWO(2),
+    THREE(3);
     private final int value;
 
     Strike(int value) {

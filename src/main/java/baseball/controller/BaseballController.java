@@ -36,7 +36,6 @@ public class BaseballController {
         ControllerConstants choice = ControllerConstants.RETRY;
         while (choice != ControllerConstants.FINISH) {
             Game.of(inputView, outputView).run();
-
             choice = getRetryInput();
         }
     }

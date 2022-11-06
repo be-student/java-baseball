@@ -40,14 +40,11 @@ public class Game {
     public void run() {
         initGame();
         BaseballScore score = BaseballScore.ZERO();
-
         while (!score.isThreeStrike()) {
             UniqueDigits playerInput = getPlayerInput();
-
             score = BaseballScore.of(playerInput, randomAnswer);
             printResultMessage(score);
         }
-
         printEndMessage();
     }
 

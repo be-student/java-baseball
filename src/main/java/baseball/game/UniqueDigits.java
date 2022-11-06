@@ -39,12 +39,10 @@ public class UniqueDigits {
 
     private List<Integer> splitDigits(int uniqueNumber) {
         List<Integer> digits = new ArrayList<>();
-
         while (uniqueNumber > 0) {
             digits.add(0, uniqueNumber % 10);
             uniqueNumber /= 10;
         }
-
         if (Sets.newHashSet(digits).size() != BASEBALL_LENGTH) {
             throw new IllegalArgumentException(DUPLICATE_INPUT_MESSAGE);
         }
