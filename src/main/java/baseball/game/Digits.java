@@ -9,7 +9,7 @@ import java.util.List;
 public class Digits {
     List<Digit> digits;
 
-    public Digits() {
+    private Digits() {
         digits = new ArrayList<>();
     }
 

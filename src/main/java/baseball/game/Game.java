@@ -37,6 +37,9 @@ public class Game {
         return new Game(inputView, outputView);
     }
 
+    /**
+     * 숫자 야구 게임의 정답을 맞힐 때까지의 1번의 게임을 실행합니다
+     */
     public void run() {
         initGame();
         BaseballScore score = BaseballScore.ZERO();
@@ -48,7 +51,7 @@ public class Game {
         printEndMessage();
     }
 
-    public void initGame() {
+    private void initGame() {
         this.randomAnswer = RandomAnswer.createRandom();
     }
 
