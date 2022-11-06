@@ -40,7 +40,13 @@ public class RandomAnswer {
         }
     }
 
-    public int digitWithIndex(int index) {
-        return answer.intWithIndex(index);
+    /**
+     * 컴퓨터의 정답에 해당하는 수의 특정 자리수에 해당하는 정수를 반환합니다
+     *
+     * @param index 0이면 100의 자리수, 1이면 10의자리수 2면 1의 자리수를 의미합니다
+     * @return 그 자리수에 해당하는 실제 숫자를 반환합니다
+     */
+    public Digit digitWithIndex(int index) {
+        return answer.digitWithIndex(index);
     }
 }

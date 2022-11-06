@@ -9,7 +9,7 @@ public class DigitsTest {
     @DisplayName("Digits 일급 컬렉션이 잘 작동함")
     @Test
     void 잘_작동() {
-        Digits digits = new Digits();
+        Digits digits = Digits.create();
         assertThat(digits.size()).isEqualTo(0);
         Digit ZERO = Digit.from(0);
 
@@ -21,5 +21,6 @@ public class DigitsTest {
 
         digits.add(ZERO);
         assertThat(digits.size()).isEqualTo(2);
+        assertThat(digits.uniqueSize()).isEqualTo(1);
     }
 }

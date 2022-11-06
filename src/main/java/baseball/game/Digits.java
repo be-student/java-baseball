@@ -13,6 +13,9 @@ public class Digits {
         digits = new ArrayList<>();
     }
 
+    public static Digits create() {
+        return new Digits();
+    }
     public void add(Digit digit) {
         digits.add(digit);
     }
@@ -31,7 +34,8 @@ public class Digits {
      * @param index 가지고 싶은 자리수를 의미합니다. 0이 가장 큰 자리수입니다
      * @return 실제 int 값
      */
-    public int intWithIndex(int index) {
-        return digits.get(index).getValue();
+    public Digit digitWithIndex(int index) {
+        return digits.get(index);
     }
+
 }

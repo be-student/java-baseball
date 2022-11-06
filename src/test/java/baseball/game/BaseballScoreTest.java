@@ -15,7 +15,7 @@ public class BaseballScoreTest {
     void 잘_작동() throws NoSuchFieldException, IllegalAccessException {
         Field field = RandomAnswer.class.getDeclaredField("answer");
         field.setAccessible(true);
-        Digits random = new Digits();
+        Digits random = Digits.create();
         random.add(Digit.ONE);
         random.add(Digit.TWO);
         random.add(Digit.THREE);
