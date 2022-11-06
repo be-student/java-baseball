@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -17,9 +18,9 @@ public class RandomAnswerTest {
 
     @DisplayName("RandomInRange를 주입한다")
     @Test
-    void randomInRange() throws NoSuchMethodException {
-        Constructor<RandomAnswer> constructor = RandomAnswer.class.getConstructor(RandomInRangeImpl.class);
-        constructor.setAccessible(true);
+    void randomInRange() throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        Constructor[] constructors = RandomAnswer.class.getDeclaredConstructors();
+        constructors[0].setAccessible(true);
         RandomInRangeImpl randomInRange = new RandomInRangeImpl() {
             private int temp = 1;
 
@@ -29,9 +30,9 @@ public class RandomAnswerTest {
             }
         };
 
-        RandomAnswer test = new RandomAnswer(randomInRange);
-        assertThat(test.digitWithIndex(0)).isEqualTo(1);
-        assertThat(test.digitWithIndex(1)).isEqualTo(2);
-        assertThat(test.digitWithIndex(2)).isEqualTo(3);
+        RandomAnswer test = (RandomAnswer) constructors[0].newInstance(randomInRange);
+        assertThat(test.digitWithIndex(0)).isEqualTo(Digit.ONE);
+        assertThat(test.digitWithIndex(1)).isEqualTo(Digit.TWO);
+        assertThat(test.digitWithIndex(2)).isEqualTo(Digit.THREE);
     }
 }
