@@ -4,7 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,7 +15,11 @@ public class BaseballScoreTest {
     void 잘_작동() throws NoSuchFieldException, IllegalAccessException {
         Field field = RandomAnswer.class.getDeclaredField("answer");
         field.setAccessible(true);
-        field.set(randomAnswer, List.of(1, 2, 3));
+        Digits random = new Digits();
+        random.add(Digit.ONE);
+        random.add(Digit.TWO);
+        random.add(Digit.THREE);
+        field.set(randomAnswer, random);
 
         UniqueDigits player1 = UniqueDigits.from(123);
         BaseballScore temp1 = BaseballScore.of(player1, randomAnswer);
