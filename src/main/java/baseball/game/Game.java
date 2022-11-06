@@ -99,7 +99,7 @@ public class Game {
     }
 
     private void printNothingMessage(BaseballScore score) {
-        if (score.isZeroBall() && score.isZeroStrike()) {
+        if (score.isNothing()) {
             outputView.print(NOTHING);
         }
     }

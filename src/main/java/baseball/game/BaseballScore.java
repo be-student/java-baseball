@@ -67,6 +67,10 @@ public class BaseballScore {
         return player.digitWithIndex(index).equals(computer.digitWithIndex(index));
     }
 
+    public boolean isNothing() {
+        return this.isZeroBall() && this.isZeroStrike();
+    }
+
     public boolean isZeroBall() {
         return this.ball == Ball.ZERO;
     }
