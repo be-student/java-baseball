@@ -33,7 +33,7 @@ public enum Digit {
     /**
      * @return enum의 실제 숫자를 반환합니다
      */
-    public int getValue() {
+    public int toInt() {
         return value;
     }
 }
