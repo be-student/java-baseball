@@ -23,6 +23,12 @@ public enum Digit {
         this.value = value;
     }
 
+    /**
+     * 0~9까지 정수를 enum의 형태로 바꿔줍니다
+     *
+     * @param value 0부터 9까지 정수
+     * @return 각 숫자에 해당하는 enum을 만듭니다
+     */
     public static Digit from(int value) {
         return Arrays.stream(Digit.values())
                 .filter(it -> it.value == value)
@@ -31,7 +37,7 @@ public enum Digit {
     }
 
     /**
-     * @return enum의 실제 숫자를 반환합니다
+     * @return enum의 실제 숫자를 정수 형태로 반환합니다
      */
     public int toInt() {
         return value;

@@ -10,6 +10,13 @@ import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
  */
 public class RandomInRange implements RandomInRangeImpl {
 
+    /**
+     * 특정 범위에 해당하는 랜덤 숫자를 반환합니다
+     *
+     * @param startInclusive 시작 범위
+     * @param endInclusive   끝나는 범위
+     * @return 시작부터 끝나는 범위 안의 숫자
+     */
     @Override
     public Digit pickInRange(int startInclusive, int endInclusive) {
         try {

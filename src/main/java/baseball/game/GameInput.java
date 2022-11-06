@@ -16,10 +16,23 @@ public class GameInput {
         this.inputView = inputView;
     }
 
+    /**
+     * InputView에 해당하는 객체를 받아서 게임에서 input을 받을 때 사용하는
+     * 객체를 반환해주는 정적 팩토리 메서드
+     *
+     * @param input InputView를 구현한 객체
+     * @return GameInput에 해당하는 객체
+     */
     public static GameInput from(InputView input) {
         return new GameInput(input);
     }
 
+    /**
+     * inputView에 해당하는 객체를 통해서 숫자를 받고 이를 반한합니다
+     * 중복이 있거나, input의 범위에 넘어가는 숫자일 경우 IllegalArgumentException
+     *
+     * @return 중복이 없는 숫자를 반환합니다
+     */
     public UniqueDigits getInputNumber() {
         try {
             String inputLine = inputView.readLine();

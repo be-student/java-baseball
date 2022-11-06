@@ -32,6 +32,11 @@ public class BaseballScore {
         return new BaseballScore(player, randomAnswer);
     }
 
+    /**
+     * 0점에 해당하는 BaseballScore 객체를 반환합니다
+     *
+     * @return strike, ball이 모두 0점인 BaseballScore 객체
+     */
     public static BaseballScore ZERO() {
         return new BaseballScore();
     }
@@ -67,37 +72,88 @@ public class BaseballScore {
         return player.digitWithIndex(index).equals(computer.digitWithIndex(index));
     }
 
+    /**
+     * strike, ball 모두 0점인 여부를 반환합니다
+     *
+     * @return 모두 0점이라면 true
+     */
     public boolean isNothing() {
         return this.isZeroBall() && this.isZeroStrike();
     }
 
+    /**
+     * ball이 0점인지를 반환합니다
+     *
+     * @return ball이 0점이라면 true
+     */
     public boolean isZeroBall() {
         return this.ball == Ball.ZERO;
     }
 
+    /**
+     * ball이 1점인지를 반환합니다
+     *
+     * @return ball이 1점이라면 true
+     */
     public boolean isOneBall() {
         return this.ball == Ball.ONE;
     }
+
+    /**
+     * ball이 2점인지를 반환합니다
+     *
+     * @return ball이 2점이라면 true
+     */
 
     public boolean isTwoBall() {
         return this.ball == Ball.TWO;
     }
 
+    /**
+     * ball이 3점인지를 반환합니다
+     *
+     * @return ball이 3점이라면 true
+     */
+
     public boolean isThreeBall() {
         return this.ball == Ball.THREE;
     }
+
+    /**
+     * strike이 0점인지를 반환합니다
+     *
+     * @return strike가 0점이라면 true
+     */
 
     public boolean isZeroStrike() {
         return this.strike == Strike.ZERO;
     }
 
+    /**
+     * strike이 1점인지를 반환합니다
+     *
+     * @return strike가 1점이라면 true
+     */
+
     public boolean isOneStrike() {
         return this.strike == Strike.ONE;
     }
 
+    /**
+     * strike이 2점인지를 반환합니다
+     *
+     * @return strike가 2점이라면 true
+     */
+
     public boolean isTwoStrike() {
         return this.strike == Strike.TWO;
     }
+
+    /**
+     * strike이 3점인지를 반환합니다
+     *
+     * @return strike가 3점이라면 true
+     */
 
     public boolean isThreeStrike() {
         return this.strike == Strike.THREE;

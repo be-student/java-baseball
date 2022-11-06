@@ -17,6 +17,12 @@ public enum Strike {
         this.value = value;
     }
 
+    /**
+     * 정수로부터 Strike에 해당하는 enum을 만들어낸다
+     *
+     * @param value 0~3 사이에 있는 정수
+     * @return Strike에 해당하는 enum을 반환함
+     */
     public static Strike from(int value) {
         return Arrays.stream(Strike.values())
                 .filter(it -> it.value == value)

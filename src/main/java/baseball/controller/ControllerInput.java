@@ -15,6 +15,12 @@ public class ControllerInput {
         this.inputView = inputView;
     }
 
+    /**
+     * ControllerInput 객체를 반환하는 정적 팩토리 메서드
+     *
+     * @param inputView 입력 가능한 구현체
+     * @return ControllerInput 객체
+     */
     public static ControllerInput from(InputView inputView) {
         return new ControllerInput(inputView);
     }

@@ -31,6 +31,10 @@ public class BaseballController {
         return new BaseballController(inputView, outputView);
     }
 
+    /**
+     * 컨트롤러를 실행시키는 메서드
+     * 컨트롤에 있는 유일한 public 인스턴스 메서드 입니다
+     */
     public void run() {
         initController();
         ControllerConstants choice = ControllerConstants.RETRY;

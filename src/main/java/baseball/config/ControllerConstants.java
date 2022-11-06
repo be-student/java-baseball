@@ -10,10 +10,21 @@ public enum ControllerConstants {
     FINISH(2);
     private final int value;
 
+    /**
+     * ControllerConstants에 해당하는 enum을 생성한다
+     *
+     * @param value 1~2에 해당하는 정수
+     */
     ControllerConstants(int value) {
         this.value = value;
     }
 
+    /**
+     * 정수로부터 enum에 맞는 값을 반환한다 맞는 값이 없다면 IllegalArgumentException
+     *
+     * @param value 1~2에 해당하는 정수
+     * @return 그에 해당하는 enum
+     */
     public static ControllerConstants from(int value) {
         return Arrays.stream(ControllerConstants.values())
                 .filter(it -> it.value == value)
