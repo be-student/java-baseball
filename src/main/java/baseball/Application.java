@@ -4,7 +4,7 @@ import baseball.adapter.in.game.ClientInputView;
 import baseball.adapter.in.game.ClientOutputView;
 import baseball.adapter.in.game.GameClient;
 import baseball.application.port.in.GameUseCase;
-import baseball.application.port.service.BaseballGame;
+import baseball.application.service.BaseballGame;
 import baseball.domain.BaseballNumberGenerator;
 import baseball.domain.BaseballRandomDigitGenerator;
 

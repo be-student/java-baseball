@@ -1,4 +1,4 @@
-package baseball.application.port.service;
+package baseball.application.service;
 
 import static baseball.domain.BaseballGameConstant.BASEBALL_LENGTH;
 
