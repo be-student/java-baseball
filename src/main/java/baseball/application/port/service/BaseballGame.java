@@ -1,5 +1,7 @@
 package baseball.application.port.service;
 
+import static baseball.domain.BaseballGameConstant.BASEBALL_LENGTH;
+
 import baseball.application.port.in.GamePlayCommand;
 import baseball.application.port.in.GameUseCase;
 import baseball.domain.BaseballNumber;
@@ -8,7 +10,6 @@ import baseball.domain.GameResultDto;
 
 public final class BaseballGame implements GameUseCase {
 
-    private static final int BASEBALL_LENGTH = 3;
     private final BaseballNumberGenerator generator;
     private BaseballNumber computerNumber;
     private BaseballNumber playerNumber;

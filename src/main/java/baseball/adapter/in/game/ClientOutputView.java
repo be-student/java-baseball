@@ -1,5 +1,7 @@
 package baseball.adapter.in.game;
 
+import static baseball.domain.BaseballGameConstant.BASEBALL_LENGTH;
+
 import baseball.domain.GameResultDto;
 
 public final class ClientOutputView {
@@ -13,7 +15,6 @@ public final class ClientOutputView {
     private static final String INITIAL_MESSAGE = "숫자 야구 게임을 시작합니다.";
     private static final String NOTHING_MESSAGE = "낫싱";
 
-    private static final int BASEBALL_LENGTH = 3;
     private static final int NOTHING = 0;
 
     void printResult(GameResultDto gameResultDto) {

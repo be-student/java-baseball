@@ -1,11 +1,12 @@
 package baseball.domain;
 
+import static baseball.domain.BaseballGameConstant.BASEBALL_LENGTH;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public final class BaseballNumberGenerator {
 
-    private static final int BASEBALL_LENGTH = 3;
     private final BaseballDigitGenerator generator;
 
     public BaseballNumberGenerator(BaseballDigitGenerator generator) {

@@ -1,13 +1,14 @@
 package baseball.domain;
 
+import static baseball.domain.BaseballGameConstant.BASEBALL_LENGTH;
+import static baseball.domain.BaseballGameConstant.BASEBALL_MAX_DIGIT;
+import static baseball.domain.BaseballGameConstant.BASEBALL_MIN_DIGIT;
+
 import java.util.List;
 import java.util.stream.IntStream;
 
 public final class BaseballNumber {
 
-    private static final int BASEBALL_LENGTH = 3;
-    private static final int BASEBALL_MAX_DIGIT = 9;
-    private static final int BASEBALL_MIN_DIGIT = 1;
     private static final String NOT_VALID_LENGTH_MESSAGE = "숫자의 길이가 3이 아닙니다";
     private static final String NOT_UNIQUE_MESSAGE = "숫자에 중복이 있습니다";
     private static final String OVER_RANGE_MESSAGE = "9가 넘는 숫자가 들어올 수 없습니다";
@@ -68,7 +69,7 @@ public final class BaseballNumber {
     }
 
     private int calculateStrike(BaseballNumber other) {
-        return (int) IntStream.range(0, 3).
+        return (int) IntStream.range(0, BASEBALL_LENGTH).
                 filter(index -> other.equalAtIndex(index, numbers.get(index)))
                 .count();
     }
