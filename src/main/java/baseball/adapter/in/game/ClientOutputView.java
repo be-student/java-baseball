@@ -4,6 +4,15 @@ import baseball.domain.GameResultDto;
 
 public final class ClientOutputView {
 
+    private static final String THREE_STRIKE_MESSAGE = "3스트라이크";
+    private static final String STRIKE_MESSAGE = "스트라이크";
+    private static final String RETRY_MESSAGE = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
+    private static final String BALL_MESSAGE = "볼 ";
+    private static final String END_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
+    private static final String INPUT_MESSAGE = "숫자를 입력해주세요 : ";
+    private static final String INITIAL_MESSAGE = "숫자 야구 게임을 시작합니다.";
+    private static final String NOTHING_MESSAGE = "낫싱";
+
     private static final int BASEBALL_LENGTH = 3;
     private static final int NOTHING = 0;
 
@@ -25,8 +34,8 @@ public final class ClientOutputView {
     }
 
     private void printCompleteMessage() {
-        System.out.println("3스트라이크");
-        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+        System.out.println(THREE_STRIKE_MESSAGE);
+        System.out.println(END_MESSAGE);
     }
 
     private boolean isNothing(GameResultDto gameResultDto) {
@@ -34,25 +43,25 @@ public final class ClientOutputView {
     }
 
     private void printNothingMessage() {
-        System.out.println("낫싱");
+        System.out.println(NOTHING_MESSAGE);
     }
 
     private void printBallAndStrike(GameResultDto gameResultDto) {
-        System.out.print(gameResultDto.getBall() + "볼 ");
-        System.out.print(gameResultDto.getStrike() + "스트라이크");
+        System.out.print(gameResultDto.getBall() + BALL_MESSAGE);
+        System.out.print(gameResultDto.getStrike() + STRIKE_MESSAGE);
         System.out.println();
     }
 
     void printRetryMessage() {
-        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        System.out.println(RETRY_MESSAGE);
     }
 
     void printNumberMessage() {
-        System.out.print("숫자를 입력해주세요 : ");
+        System.out.print(INPUT_MESSAGE);
     }
 
 
     void printInputMessage() {
-        System.out.println("숫자 야구 게임을 시작합니다.");
+        System.out.println(INITIAL_MESSAGE);
     }
 }
