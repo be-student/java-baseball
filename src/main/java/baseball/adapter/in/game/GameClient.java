@@ -20,9 +20,9 @@ public class GameClient {
         printInputMessage();
         ClientChoice clientChoice = ClientChoice.RETRY;
         while (clientChoice != ClientChoice.QUIT) {
+            gameUseCase.reset();
             playOneGame();
             clientChoice = askClientToQuitOrRetry();
-            gameUseCase.reset();
         }
     }
 

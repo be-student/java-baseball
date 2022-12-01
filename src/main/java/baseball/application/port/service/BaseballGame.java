@@ -15,7 +15,6 @@ public class BaseballGame implements GameUseCase {
 
     public BaseballGame(BaseballNumberGenerator generator) {
         this.generator = generator;
-        computerNumber = generator.generate();
     }
 
     @Override
@@ -27,6 +26,7 @@ public class BaseballGame implements GameUseCase {
     @Override
     public void reset() {
         computerNumber = generator.generate();
+        playerNumber = null;
     }
 
     @Override
