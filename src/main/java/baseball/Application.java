@@ -12,7 +12,7 @@ public class Application {
 
     public static void main(String[] args) {
         GameClient gameClient = new GameClient(
-                generateGameUsecase(), generateClientInputView(), generateClientOutputView());
+                generateGameUseCase(), generateClientInputView(), generateClientOutputView());
         gameClient.playGame();
     }
 
@@ -20,7 +20,7 @@ public class Application {
         return new ClientOutputView();
     }
 
-    private static GameUseCase generateGameUsecase() {
+    private static GameUseCase generateGameUseCase() {
         return new BaseballGame(baseballNumberGenerator());
     }
 
