@@ -3,7 +3,7 @@ package baseball.domain;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class BaseballNumber {
+public final class BaseballNumber {
 
     private static final int BASEBALL_LENGTH = 3;
     private static final int BASEBALL_MAX_DIGIT = 9;

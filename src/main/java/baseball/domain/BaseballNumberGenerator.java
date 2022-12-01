@@ -3,7 +3,7 @@ package baseball.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BaseballNumberGenerator {
+public final class BaseballNumberGenerator {
 
     private static final int BASEBALL_LENGTH = 3;
     private final BaseballDigitGenerator generator;

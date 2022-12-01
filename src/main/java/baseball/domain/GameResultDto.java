@@ -1,11 +1,11 @@
 package baseball.domain;
 
-public class GameResultDto {
+public final class GameResultDto {
 
     private final int strike;
     private final int ball;
 
-    public GameResultDto(int strike, int ball) {
+    GameResultDto(int strike, int ball) {
         this.strike = strike;
         this.ball = ball;
     }

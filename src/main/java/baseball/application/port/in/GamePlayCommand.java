@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class GamePlayCommand {
+public final class GamePlayCommand {
 
     private static final String NULL_MESSAGE = "입력에 null 이 있으면 안 됩니다";
     private static final String NOT_NUMBER_MESSAGE = "숫자로 변환할 수 없습니다";

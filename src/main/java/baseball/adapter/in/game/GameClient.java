@@ -4,7 +4,7 @@ import baseball.application.port.in.GamePlayCommand;
 import baseball.application.port.in.GameUseCase;
 import baseball.domain.GameResultDto;
 
-public class GameClient {
+public final class GameClient {
 
     private final ClientInputView inputView;
     private final GameUseCase gameUseCase;

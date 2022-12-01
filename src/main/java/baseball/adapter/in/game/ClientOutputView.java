@@ -2,7 +2,7 @@ package baseball.adapter.in.game;
 
 import baseball.domain.GameResultDto;
 
-public class ClientOutputView {
+public final class ClientOutputView {
 
     private static final int BASEBALL_LENGTH = 3;
     private static final int NOTHING = 0;

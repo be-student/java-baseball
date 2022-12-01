@@ -6,7 +6,7 @@ import baseball.domain.BaseballNumber;
 import baseball.domain.BaseballNumberGenerator;
 import baseball.domain.GameResultDto;
 
-public class BaseballGame implements GameUseCase {
+public final class BaseballGame implements GameUseCase {
 
     private static final int BASEBALL_LENGTH = 3;
     private final BaseballNumberGenerator generator;

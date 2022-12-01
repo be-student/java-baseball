@@ -2,7 +2,7 @@ package baseball.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
-public class BaseballRandomDigitGenerator implements BaseballDigitGenerator {
+public final class BaseballRandomDigitGenerator implements BaseballDigitGenerator {
 
     @Override
     public int generate() {
