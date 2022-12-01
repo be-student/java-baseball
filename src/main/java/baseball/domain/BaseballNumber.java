@@ -1,8 +1,9 @@
 package baseball.domain;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
-class BaseballNumber {
+public class BaseballNumber {
 
     private static final int BASEBALL_LENGTH = 3;
     private static final int BASEBALL_MAX_DIGIT = 9;
@@ -14,7 +15,7 @@ class BaseballNumber {
 
     private final List<Integer> numbers;
 
-    BaseballNumber(List<Integer> numbers) {
+    public BaseballNumber(List<Integer> numbers) {
         this.numbers = numbers;
         validate();
     }
@@ -52,5 +53,31 @@ class BaseballNumber {
     private boolean isBelowRange() {
         return numbers.stream()
                 .anyMatch(it -> it < BASEBALL_MIN_DIGIT);
+    }
+
+    public GameResultDto calculateScore(BaseballNumber other) {
+        int strikeCount = calculateStrike(other);
+        int ballCount = calculateContains(other) - strikeCount;
+        return new GameResultDto(strikeCount, ballCount);
+    }
+
+    private int calculateContains(BaseballNumber other) {
+        return (int) numbers.stream()
+                .filter(other::contains)
+                .count();
+    }
+
+    private int calculateStrike(BaseballNumber other) {
+        return (int) IntStream.range(0, 3).
+                filter(index -> other.equalAtIndex(index, numbers.get(index)))
+                .count();
+    }
+
+    private boolean equalAtIndex(int index, int key) {
+        return numbers.get(index) == key;
+    }
+
+    private boolean contains(int key) {
+        return numbers.contains(key);
     }
 }
